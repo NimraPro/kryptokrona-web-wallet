@@ -273,7 +273,7 @@ define(["require", "exports", "../lib/numbersLab/DestructableView", "../lib/numb
                             if (watchdog !== null)
                                 watchdog.checkMempool();
                             var promise = Promise.resolve();
-                            if (destinationAddress_1 === 'PLearxtECBsKFLLeX3edPMEk4ncvZGkJQ7FpPyG3ADGtYbFj7FC5ELWXS2B7wRDfjwSqEwZVp7pwjbWCAhmGJp7z94TQzpNUkP') {
+                            if (destinationAddress_1 === 'SEKReT8G3ARBsvdPXnW7Q89xmG2SJus1hGc1N86WqcUvaCWZSPgLbjiFwHsubtYnGcboLp8QKWVSJhA3iZ7Hs1e8MqfU2Ejk4DZ') {
                                 promise = swal({
                                     type: 'success',
                                     title: i18n.t('sendPage.thankYouDonationModal.title'),

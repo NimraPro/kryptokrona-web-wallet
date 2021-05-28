@@ -230,15 +230,18 @@ define(["require", "exports", "../TransactionsExplorer", "../Transaction", "../M
                             self.processTransactions(transactions);
                             if (self.lastBlockLoading < height - 1) {
                                 setTimeout(function () {
+                                    console.log('Loading history..');
                                     self.loadHistory();
                                 }, 1); // then try load history again... 
                             }
                             else {
                                 setTimeout(function () {
+                                    console.log('Loading history.. 2');
                                     self.loadHistory();
                                 }, 30000); // wait 30 seconds, then try load history again... 
                             }
                         }).catch(function () {
+                            console.log('Failed to load history');
                             setTimeout(function () {
                                 self.loadHistory();
                             }, 30 * 1000); //retry 30s later if an error occurred
@@ -282,7 +285,7 @@ define(["require", "exports", "../TransactionsExplorer", "../Transaction", "../M
             this.heightLastTimeRetrieve = Date.now();
             return new Promise(function (resolve, reject) {
                 $.ajax({
-                    url: config.apiUrl + "getheight",
+                    url: self.serverAddress + "height",
                     method: 'GET'
                 }).done(function (raw) {
                     self.heightCache = parseInt(raw.height);
